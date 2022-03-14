@@ -1,0 +1,5 @@
+datasource:
+  db:
+    username: m1user1_18
+    password: m1user1_18
+    url: jdbc:postgresql://plg-broker.ad.univ-lorraine.fr/dicegame
