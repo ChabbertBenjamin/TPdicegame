@@ -1,21 +1,34 @@
 package fr.ul.miage.dicegame.entity;
 
 public class Player {
+
+
+        private static Player instance = null;
+
+        private Player() {}
+
+        public static synchronized Player getInstance() {
+            if (instance == null) {
+                instance = new Player();
+                instance.setScore(0);
+            }
+
+            return instance;
+        }
+
+
     private String name;
     private int score;
     private Dice dice1;
     private Dice dice2;
 
-    public Player(String name, Dice dice1, Dice dice2) {
-        this.name = name;
-        this.dice1 = dice1;
-        this.dice2 = dice2;
-        this.score = 0;
-    }
-
     public void play(){
         dice1.launch();
         dice2.launch();
+    }
+
+    public void incrementScore(int up){
+        this.score = score + up;
     }
 
     public String getName() {

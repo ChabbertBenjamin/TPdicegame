@@ -1,12 +1,14 @@
 package fr.ul.miage.dicegame.factory;
 
 import fr.ul.miage.dicegame.product.Highscore;
-import fr.ul.miage.dicegame.product.HighscoreSr;
+import fr.ul.miage.dicegame.product.HighscoreMysql;
 
-public class SrKit extends PersistKit {
+public class MysqlKit extends PersistKit {
+
     @Override
     public Highscore makeKit() {
-        Highscore highscore = new HighscoreSr();
+        Highscore highscore = new HighscoreMysql();
         return highscore;
     }
 }
+

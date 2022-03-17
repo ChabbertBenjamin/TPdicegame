@@ -1,13 +1,12 @@
 package fr.ul.miage.dicegame.factory;
 
 import fr.ul.miage.dicegame.product.Highscore;
-import fr.ul.miage.dicegame.product.HighscoreJDBC;
+import fr.ul.miage.dicegame.product.HighscorePostGres;
 
-public class JDBCKit extends PersistKit {
+public class PostGresKit extends PersistKit {
     @Override
     public Highscore makeKit() {
-        Highscore highscore = new HighscoreJDBC();
+        Highscore highscore = new HighscorePostGres();
         return highscore;
     }
 }
-
